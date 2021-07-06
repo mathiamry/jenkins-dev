@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         registry = "mathiamry1/jenkins-dev" 
-        registryCredential = '7f27181a-6b78-4e40-b5e1-922101d4bf87' 
+        registryCredential = '243e4d4d-a961-496d-858b-3bc5f65e40e1' 
         dockerImage = '' 
     }
     agent any
@@ -11,7 +11,7 @@ pipeline {
 
         stage('Cloning our Git') { 
             steps { 
-                git url: 'http://gitlab.baamtu.com/mamadou.thiam/odoo-hello-world.git',
+                git url: 'https://github.com/mathiamry/jenkins-dev.git',
                 credentialsId: registryCredential
             }
         } 
