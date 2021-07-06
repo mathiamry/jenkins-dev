@@ -83,12 +83,12 @@ pipeline {
     success {
       slackSend channel: '#jenkins-ci-dev',
       color: COLOR_MAP[currentBuild.currentResult],
-      message: "*${currentBuild.currentResult}:* JOB ${env.JOB_NAME} | BUILD N° = ${env.BUILD_NUMBER}\n Plus d'infos: ${env.BUILD_URL} \n Une nouvelle image est disponible pour le projet CFPT sur l'environnement DEV\n Message du commit : https://github.com/mathiamry/jenkins-dev/commit/${env.GIT_COMMIT_MSG} \n Lien du commit:https://github.com/mathiamry/jenkins-dev/commit/${env.GIT_COMMIT} "
+      message: "*${currentBuild.currentResult}:* JOB ${env.JOB_NAME} | BUILD N° = ${env.BUILD_NUMBER}\n Plus d'infos: ${env.BUILD_URL} \n Une nouvelle image est disponible pour le projet CFPT sur l'environnement DEV\n Message du commit : https://github.com/mathiamry/jenkins-dev/commit/${env.GIT_COMMIT_MSG} \n Lien du commit:https://github.com/mathiamry/jenkins-dev/commit/${env.BRANCH_NAME} "
     }
     failure {
       slackSend channel: '#jenkins-ci-dev',
       color: COLOR_MAP[currentBuild.currentResult],
-      message: "*${currentBuild.currentResult}:* JOB ${env.JOB_NAME} | BUILD N° = ${env.BUILD_NUMBER}\n Plus d'infos: ${env.BUILD_URL} \n Message du commit : ${env.GIT_COMMIT_MSG} \n Lien du commit: {env.GIT_COMMIT}"
+      message: "*${currentBuild.currentResult}:* JOB ${env.JOB_NAME} | BUILD N° = ${env.BUILD_NUMBER}\n Plus d'infos: ${env.BUILD_URL} \n Message du commit : ${env.GIT_COMMIT_MSG} \n Lien du commit: {env.BRANCH_NAME}"
     }
   }
     }
