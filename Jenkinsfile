@@ -16,8 +16,6 @@ pipeline {
         stage('Test') {
         steps {
             script {
-            
-                println "ici on a "
                 println "${env.BRANCH_NAME}"
             }   
         }
