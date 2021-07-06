@@ -13,6 +13,11 @@ pipeline {
     }
     agent any
     stages {
+        stage('Generate') {
+            node {
+                checkout scm
+                stash 'source'
+            }
         stage('Test') {
         steps {
             script {
