@@ -4,7 +4,10 @@ def COLOR_MAP = [
         'FAILURE': 'danger',
     ]
 pipeline {
-    
+    triggers {
+        cron('H/2 * * ')
+        pollSCM('0 0 * * 0')
+    }
     environment {
         doError = '0'
         registry = "mathiamry1/jenkins-dev" 
@@ -13,6 +16,7 @@ pipeline {
     }
     agent any
     stages {
+          
          stage('Checkout code') {
                 steps {
                     checkout scm
