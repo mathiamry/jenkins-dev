@@ -5,7 +5,7 @@ def COLOR_MAP = [
     ]
 pipeline {
     triggers {
-        cron('H/2 * * ')
+        cron('H/2 * * * *')
         pollSCM('0 0 * * 0')
     }
     environment {
